@@ -1,28 +1,14 @@
-/**
- * greeter
- */
-import java.util.Scanner;
-class greeter {
-    int age;
- 
-    greeter(int x)
-    {
-        age = x;
-    }
+class Greeter
+{
+
     void greet()
     {
-        System.out.println((int) age);
+        System.out.println("Hello, Dediu David Gabriel, with the student ID 2096676. Today's date is 03/09/2024."); /** Program prints the first line */
+        System.out.println("Good luck in the course Programming: Enjoy!");  /**Program prints the second line */
 
     }
-
     public static void main(String[] args)
     {
-        int input;
-        Scanner scanner = new Scanner(System.in);
-        input = scanner.nextInt();
-        
-        greeter ac = new greeter(18);
-        ac.greet();
+        new Greeter().greet();
     }
-    
 }
