@@ -1,0 +1,46 @@
+Minimal test set for HitDetection.java
+
+AUTHORS:
+- <STUDENT 1'S NAME> (<STUDENT 1'S ID>)
+- <STUDENT 2'S NAME> (<STUDENT 2'S ID>)
+
+TEST CASE 1
+motivation  : Example run, test a point in first circle
+input       : 0 0 3.1 0.25 0.13 1 2.1 2.03
+output      : The point hits the first circle
+
+
+TEST CASE 2
+motivation  :
+input       :
+output      :
+
+
+TEST CASE 3
+motivation  :
+input       :
+output      :
+
+
+TEST CASE 4
+motivation  :
+input       :
+output      :
+
+
+TEST CASE 5
+motivation  :
+input       :
+output      :
+
+
+TEST CASE 6
+motivation  :
+input       :
+output      :
+
+
+TEST CASE 7
+motivation  :
+input       :
+output      :
