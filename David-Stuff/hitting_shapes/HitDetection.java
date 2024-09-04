@@ -60,9 +60,10 @@ class HitDetection {
         double distanceSecond;
 
         distanceFirst = Math.sqrt(Math.pow(xCoordFirst - xCoordPoint,2) + Math.pow(yCoordFirst - yCoordPoint,2));
-        distanceSecond = Math.sqrt(Math.pow(xCoordSecond - xCoordPoint,2) + Math.pow(yCoordSecond - yCoordPoint,2));
-
-        if (distanceFirst <= radiusFirst && distanceSecond < radiusSecond) {
+        distanceSecond = Math.sqrt( Math.pow(xCoordSecond - xCoordPoint, 2) + Math.pow(yCoordSecond - yCoordPoint,2) );
+        System.out.println(distanceFirst);
+        System.out.println(distanceSecond);
+        if (distanceFirst <= radiusFirst && distanceSecond <= radiusSecond) {
             System.out.println("The point hits both circles");
             return;
         }
@@ -70,15 +71,16 @@ class HitDetection {
             System.out.println("The point hits the first circle");
             return;
         }
-        if (distanceFirst <= radiusSecond) {
+        if (distanceSecond <= radiusSecond) {
             System.out.println("The point hits the second circle");
             return;
         }
+        System.out.println("The point doesn't hit shit");
         // END TODO
     }
 
     public static void main(String[] args) {
-
+        System.out.println("The program has started \n");
         new HitDetection().run();
     }
 }
