@@ -26,10 +26,15 @@ public class Interest{
         relying only on interest, I would have calculated it in the print statement */
         System.out.println("After a year, your balance is EUR " + balance);
         System.out.println("You'll have to pay in taxes: " + balance * tax /100);
+        /*I want to calculate tax in the print statement, keeping it constant and 
+         * avoiding the creation of unnecesary variables that can clutter the code
+         */
 
     }
 
     public static void main(String[] args){
-       new Interest().calculateInterest();
+       new Interest().calculateInterest(
+        
+       );
     }
 }
