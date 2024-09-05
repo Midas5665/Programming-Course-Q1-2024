@@ -18,9 +18,11 @@ import java.util.Scanner;
  *  If the distance between the point and the centers is less than the circle's radius, we can 
  *  conclude that the point is situated somewhere in the area of the circle.
  * 
- *  The program checks whether the point hits both of the circles, in which case, the message "" is
- *  displayed. If the point does not hit both of the circles simultaneously, then the program checks
- *  if the point hits
+ *  The program checks whether the point hits both of the circles, in which case, the message 
+ *  "The point hits both circles" is displayed. If the point does not hit both of the circles 
+ *   simultaneously, then the program checks if the point hits either the first or the second 
+ *   circle. If the point is not located in either of the areas, then the message: "The point 
+ *   does not hit either circle" is displayed.
  * 
  * END TODO
  * 
@@ -62,18 +64,10 @@ class HitDetection {
 
         scanner.close();
 
-        //Check whether either of the provided radiuses is negative
-
         if (radiusFirst < 0 || radiusSecond < 0) {
             System.out.println("input error");
             return;
         }
-
-        /*
-        * Compute the distance between the point to the centers of both of  
-        * the circles using the following formula : 
-        * 
-        */  
 
         double distanceFirst;
         double distanceSecond;
