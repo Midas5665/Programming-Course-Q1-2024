@@ -27,7 +27,7 @@ public class Ex2 {
     public static void main(String[] args) {
         int nr;
         System.out.println("Input the number of numbers lol:");
-
+        nr = 0;
         System.out.println(nr);
     }
 }
