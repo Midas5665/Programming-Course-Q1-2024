@@ -7,15 +7,13 @@ public class Interest{
         double balance; /**in Euro */
         double rate;
 
-        balance =250.0;
+        System.out.print("How much money you got: ");
+        balance = scanner.nextDouble();
 
         System.out.print("Give interest rate as a percentage: ");
         rate = scanner.nextDouble();
-
-        System.out.println(
-            "After a year, you have earned " + (balance * rate / 100) + " from interest"
-        );
-
+        balance = (balance + (balance * rate / 100));
+        System.out.println("After a year, your balance is EUR " + balance);
     }
 
     public static void main(String[] args){
