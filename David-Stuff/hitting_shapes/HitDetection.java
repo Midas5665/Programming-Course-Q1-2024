@@ -4,13 +4,13 @@ import java.util.Scanner;
  * 
  * Usage:
  * TODO: Documentation
- * 
+ *  
  * END TODO
  * 
  * @author <Dediu David Gabriel>
- * @ID <ID STUDENT 1>
+ * @ID <2096676>
  * @author <Vasilescu Dan Gabriel>
- * @ID <ID STUDENT 2>
+ * @ID <2155699>
  * 
  */
 class HitDetection {
@@ -43,6 +43,8 @@ class HitDetection {
         xCoordPoint = scanner.nextDouble();
         yCoordPoint = scanner.nextDouble();
 
+        scanner.close();
+
         //Check whether either of the provided radiuses is negative
 
         if (radiusFirst < 0 || radiusSecond < 0) {
@@ -59,10 +61,11 @@ class HitDetection {
         double distanceFirst;
         double distanceSecond;
 
-        distanceFirst = Math.sqrt(Math.pow(xCoordFirst - xCoordPoint,2) + Math.pow(yCoordFirst - yCoordPoint,2));
-        distanceSecond = Math.sqrt( Math.pow(xCoordSecond - xCoordPoint, 2) + Math.pow(yCoordSecond - yCoordPoint,2) );
-        System.out.println(distanceFirst);
-        System.out.println(distanceSecond);
+        distanceFirst = Math.sqrt(Math.pow(xCoordFirst - xCoordPoint, 2) 
+        + Math.pow(yCoordFirst - yCoordPoint, 2));
+        distanceSecond = Math.sqrt(Math.pow(xCoordSecond - xCoordPoint, 2)
+         + Math.pow(yCoordSecond - yCoordPoint, 2));
+
         if (distanceFirst <= radiusFirst && distanceSecond <= radiusSecond) {
             System.out.println("The point hits both circles");
             return;
@@ -75,12 +78,11 @@ class HitDetection {
             System.out.println("The point hits the second circle");
             return;
         }
-        System.out.println("The point doesn't hit shit");
+        System.out.println("The point does not hit either circle");
         // END TODO
     }
 
     public static void main(String[] args) {
-        System.out.println("The program has started \n");
         new HitDetection().run();
     }
 }
