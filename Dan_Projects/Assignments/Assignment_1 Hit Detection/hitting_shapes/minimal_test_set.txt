@@ -29,7 +29,7 @@ output      :The point does not hit either circle
 
 
 TEST CASE 5
-motivation  :Example run, test error detection on negative radius for both circles
+motivation  :Example run, test a point on the edge of the circle
 input       :
 output      :input error
 
