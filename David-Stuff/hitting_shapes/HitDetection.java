@@ -4,7 +4,26 @@ import java.util.Scanner;
  * 
  * Usage:
  * TODO: Documentation
- *  
+ * 
+ *  The program takes 8 double-type inputs: the first three (xCoordFirst, yCoordFirst, radiusFirst)
+ *  containing the coordinates of center of the first circle and its radius. The next 3 inputs
+ *  (xCoordSecond, yCoordSecond, radiusSecond) contain information regarding the coordinates of
+ *  the second circle's center and the length of its radius.
+ *  First, the program checks whether either one of the radiuses are negative. If that is the case,
+ *  the message "input error" will be displayed.
+ * 
+ *  Using the formula: Distance(P(x1,y1)) = sqrt( (x1-x2)^2 + (y1-y2)^2 ), the program determines 
+ *  the distance between the point and the centers of the circles.
+ * 
+ *  If the distance between the point and the centers is less than the circle's radius, we can 
+ *  conclude that the point is situated somewhere in the area of the circle.
+ * 
+ *  The program checks whether the point hits both of the circles, in which case, the message 
+ *  "The point hits both circles" is displayed. If the point does not hit both of the circles 
+ *   simultaneously, then the program checks if the point hits either the first or the second 
+ *   circle. If the point is not located in either of the areas, then the message: "The point 
+ *   does not hit either circle" is displayed.
+ * 
  * END TODO
  * 
  * @author <Dediu David Gabriel>
@@ -45,18 +64,10 @@ class HitDetection {
 
         scanner.close();
 
-        //Check whether either of the provided radiuses is negative
-
         if (radiusFirst < 0 || radiusSecond < 0) {
             System.out.println("input error");
             return;
         }
-
-        /*
-        * Compute the distance between the point to the centers of both of  
-        * the circles using the following formula : 
-        * Distance = sqrt( (x1-x2)^2 + (y1-y2)^2 )
-        */  
 
         double distanceFirst;
         double distanceSecond;

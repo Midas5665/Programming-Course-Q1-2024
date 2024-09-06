@@ -2,15 +2,39 @@
 import java.util.Scanner;
 import java.util.Arrays;
 public class Ex1 {
+    double balance;
     
-    void doStuff() {
-        int[] x = {1,2,3};
+    Ex1(double x) {
+        balance = x;
+    }
+    void calculateBalance() {
+        double interestRate = 2.5;
 
-        System.out.println(x[1]);
+        if (balance < 0)
+            interestRate -= .5;
+        if (balance >= 10000)
+            interestRate += .5;
+        
+        balance += balance * interestRate / 100;
+
+        
+        
+        
+
     }
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double balance;
 
-        Ex1 thing = new Ex1();
-        thing.doStuff();
+
+        
+
+        System.out.println("Enter your balance: \n");
+        balance = scanner.nextDouble();
+        Ex1 thing = new Ex1(balance);
+        thing.calculateBalance();
+        System.out.println(thing.balance);
+
+        
     }
 }
