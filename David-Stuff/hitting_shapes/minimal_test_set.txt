@@ -6,7 +6,7 @@ AUTHORS:
 
 TEST CASE 1
 motivation  : Example run, test a point in first circle
-input       : 0 0 3.1 0.25 0.13 1 2.1 2.03
+input       : 0 0 3,1 0,25 0,13 1 2,1 2,03
 output      : The point hits the first circle
 
 
