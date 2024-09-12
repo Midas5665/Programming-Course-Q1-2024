@@ -34,6 +34,7 @@ class HitDetection {
         double pointY;
 
 
+        System.out.println("Please gimme input"); //Temporary
         cordX1= scanner.nextDouble();
         cordY1= scanner.nextDouble();
         radius1= errorCheck(scanner.nextDouble());
@@ -43,16 +44,17 @@ class HitDetection {
         pointX= scanner.nextDouble();
         pointY= scanner.nextDouble();
 
-        if(inCircle(distanceCalc(cordX1, cordY1, pointX, pointY), radius1) && inCircle(distanceCalc(cordX2, cordY2, pointX, pointY), radius2)){
+        if (inCircle(distanceCalc(cordX1, cordY1, pointX, pointY), radius1) 
+            && inCircle(distanceCalc(cordX2, cordY2, pointX, pointY), radius2)) {
             System.out.println("The point hits both circles");
         }
-        else if(inCircle(distanceCalc(cordX1, cordY1, pointX, pointY), radius1)) {
+        else if (inCircle(distanceCalc(cordX1, cordY1, pointX, pointY), radius1)) {
             System.out.println("The point hits the first circle");
         }
-        else if(inCircle(distanceCalc(cordX2, cordY2, pointX, pointY), radius2)) {
+        else if (inCircle(distanceCalc(cordX2, cordY2, pointX, pointY), radius2)) {
             System.out.println("The point hits the second circle");
         }
-        else{
+        else {
             System.out.println("The point does not hit either circle");
         }
 
@@ -60,8 +62,8 @@ class HitDetection {
         // END TODO
     }
 
-    public static double errorCheck(double radius){
-        if(radius<0){
+    public static double errorCheck(double radius) {
+        if (radius < 0) {
             System.out.println("input error");
             return 0;
         }
