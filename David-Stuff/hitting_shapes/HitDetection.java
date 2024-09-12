@@ -15,8 +15,9 @@ import java.util.Scanner; //This library will allow us to type in our own input 
  *  Using the formula: Distance(P(x1,y1)) = sqrt( (x1-x2)^2 + (y1-y2)^2 ), the program determines 
  *  the distance between the point and the centers of the circles.
  * 
- *  If the distance between the point and the centers is less //or equal to// the circle's radius, we can 
- *  conclude that the point is situated somewhere in the area of the circle, including its border.
+ *  If the distance between the point and the centers is less //or equal to// the circle's radius, 
+ *  we can  conclude that the point is situated somewhere in the area of the circle, including 
+ *  its border.
  * 
  *  The program checks whether the point hits both of the circles, in which case, the message 
  *  "The point hits both circles" is displayed. If the point does not hit both of the circles 
@@ -38,20 +39,34 @@ class HitDetection {
 
         // TODO: Hit detection
 
-        double xCoordFirst; /**The x and y coordinates for the center of the
-        double yCoordFirst; *first circle, along with its radius. It's all the 
-        double radiusFirst; *data needed to "build" the first circle.
-                            */
-       
-        double xCoordSecond; /**The same procedure, but this 
-        double yCoordSecond; *time for the second circle.
-        double radiusSecond; */
+        double xCoordFirst; 
+        double yCoordFirst; 
+        double radiusFirst; 
+                           
+        /* 
+        * The x and y coordinates for the center of the
+        * first circle, along with its radius. It's all the 
+        * data needed to "build" the first circle.
+        */
 
-        double xCoordPoint; /**The x and y coordinates for the point, which will be 
-        double yCoordPoint; *later used to determine it's position relative to the two circles. 
-                            */
+        double xCoordSecond;  
+        double yCoordSecond; 
+        double radiusSecond; 
 
-        Scanner scanner = new Scanner(System.in);    //Creating a new scanner object
+        /*
+        * The same procedure, but this
+        * time for the second circle.
+        */
+
+        double xCoordPoint; 
+        double yCoordPoint; 
+
+        /*
+        * The x and y coordinates for the point, which will be 
+        * later used to determine it's position relative to the two circles. 
+        */
+
+        Scanner scanner = new Scanner(System.in); //Creating a new scanner object
 
         xCoordFirst = scanner.nextDouble();
         yCoordFirst = scanner.nextDouble();
@@ -64,18 +79,22 @@ class HitDetection {
         xCoordPoint = scanner.nextDouble();
         yCoordPoint = scanner.nextDouble(); 
 
-        /**If earlier we defined the variables needed for both circles and the  
-        *point, now we feed them values by typing in the console  
-        *at the start of every run of the project.
+        /*
+        * If earlier we defined the variables needed for both circles and the  
+        * point, now we feed them values by typing in the console  
+        * at the start of every run of the project.
         */
 
         scanner.close(); //We close the scanner after use
-
         if (radiusFirst < 0 || radiusSecond < 0) {
             System.out.println("input error");
             return;
         }
-        //This if statement checks for negative inputs for the radiuses. If true, the program prints out "input error"
+
+        /*
+        * This if statement checks for negative inputs for the radiuses. 
+        * If true, the program prints out "input error"
+        */
 
         double distanceFirst;
         double distanceSecond;
@@ -85,10 +104,11 @@ class HitDetection {
         distanceSecond = Math.sqrt(Math.pow(xCoordSecond - xCoordPoint, 2)
          + Math.pow(yCoordSecond - yCoordPoint, 2));
        
-        /** We both declare and calculate the variables for the 
-        *distance between the point and the centre of each circle
-        *using the formula for distance between two 
-        *points on the cartesian coordinate system
+        /*
+        * We both declare and calculate the variables for the 
+        * distance between the point and the centre of each circle
+        * using the formula for distance between two 
+        * points on the cartesian coordinate system
         */
 
         
@@ -106,13 +126,16 @@ class HitDetection {
         }
         System.out.println("The point does not hit either circle");
 
-        /**With this triple if statement we check if the distance between the point 
-        *and the centre of each circle is less or equal to the radius of the 
-        *corresponding circle, which would mean the point is either in the circle or at the edge of it.
-        *If the point hits both cirles, the output of the program would be "The point hits both circles"
-        *If it hits only one circle, the output would be "The point hits the first/second circle"
-        *depending on which circle the point hit. If the point didn't touch any circles, the
-        *output would be "The point does not hit either circle".
+        /*
+        * With this triple if statement we check if the distance between the point 
+        * and the centre of each circle is less or equal to the radius of the 
+        * corresponding circle, which would mean the point is either in the circle or 
+        * at the edge of it.
+        * If the point hits both cirles, the output of the program would be
+        * "The point hits both circles".
+        * If it hits only one circle, the output would be "The point hits the first/second circle"
+        * depending on which circle the point hit. If the point didn't touch any circles, the
+        * output would be "The point does not hit either circle".
         */
 
             
