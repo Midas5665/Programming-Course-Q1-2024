@@ -14,6 +14,10 @@ import java.util.Scanner;
  * @ID <2155699>
  * 
  */
+/*This project is NOT complete. It needs documentation, testing 
+*and proper organization according to checkstyle. However, this is
+*just for the functionality of the project 
+ */
 class HitDetection {
 
     Scanner scanner = new Scanner(System.in);
@@ -30,7 +34,6 @@ class HitDetection {
         double pointY;
 
 
-        System.out.println("Please gimme input"); //Temporary
         cordX1= scanner.nextDouble();
         cordY1= scanner.nextDouble();
         radius1= errorCheck(scanner.nextDouble());
