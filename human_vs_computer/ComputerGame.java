@@ -75,6 +75,6 @@ public class ComputerGame {
     }
 
     public static void main(String[] args) {
-            new ComputerGame().run();
+        new ComputerGame().run();
     }
 }
