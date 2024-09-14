@@ -39,25 +39,25 @@ public class ComputerGame {
             guessedNumber = (bottomBorder + topBorder) / 2; //The basis of binary search,
             System.out.println(guessedNumber);              //we make our computer 'guess'
             numberOfGuesses--;                              //the middle number of its allowed 
-            response = scanner.next();                      //borders, those borders shrinking
-            if (numberOfGuesses == 0) {                     //after every response. Each repetition
-                System.out.println("I give up");          //of this loop decreases the number of 
-            }   //Computer's response to                    //allowed guesses for the computer.
-            //running out of guesses
+            response = scanner.next();                      //borders.
 
+            //These borders shrink after every response. Each repetition
+            //of this loop decreases the number of allowed guesses for the computer.
+            
+            
             switch (response) {                             //These blocks of code dictate the
                 case "lower":                               //computer's answer to all possible 
                     topBorder = guessedNumber;              //options of responses to its guess.
                     break;                                  //At 'higher', the lower border 
                 case "higher":                              //increases. For 'lower', it
                     bottomBorder = guessedNumber;           //decreases. For 'guessed', the
-                    break;                                  //process ends. For any other
-                case "guessed":                             //input, the number of guesses
-                    numberOfGuesses = 0;                    //remain the same, nothing 
-                    scanner.close();                        //changing.
+                    break;                                  //process ends. 
+                case "guessed":                             
+                    numberOfGuesses = 0;                    
+                    scanner.close();                        
                     break;
                 default:
-                    numberOfGuesses++;
+                    
                 }
                 
             
@@ -65,6 +65,10 @@ public class ComputerGame {
 
             
         }
+        if (numberOfGuesses == 0) { 
+            System.out.println("I give up");
+        }   //Computer's response to running out of guesses
+        
     }
 
     public static void main(String[] args) {    //The main method, where the computer game 
