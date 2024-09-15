@@ -24,7 +24,7 @@ public class ComputerGame {
 
         int numberOfGuesses = 10;   //Defining the main variables needed at the start of 
         int bottomBorder = 0;       //the main constructor.
-        int topBorder = 999;
+        int topBorder = 1000;
         String response;    //Response will be used to communicate to the computer
         String startWord;   //the validity of its guess, while startWord serves as
         int guessedNumber;  //a one time variable to cleanly start the process
