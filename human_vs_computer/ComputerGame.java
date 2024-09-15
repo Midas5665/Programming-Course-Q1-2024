@@ -25,12 +25,16 @@ public class ComputerGame {
         int numberOfGuesses = 10;   //Defining the main variables needed at the start of 
         int bottomBorder = 0;       //the main constructor.
         int topBorder = 999;
-        String response;    //Response will be used to communicate to the computer
-        String startWord;   //the validity of its guess, while startWord serves as
         int guessedNumber;  //a one time variable to cleanly start the process
 
+        String response;    //Response will be used to communicate to the computer
+        String startWord;   //the validity of its guess, while startWord serves as
         
-        System.out.println("Think of a secret number between not smaller"
+        boolean hasGuessed = false; 
+        //a one time variable to check for cases in 
+        //which the computer guessed with its final attempt
+        
+        System.out.println("Think of a secret number not smaller "
             + "than 0 and not greater than 999. Type 'go' when you have one."); 
         //A small guide for first time users
         startWord = scanner.next();
@@ -54,7 +58,8 @@ public class ComputerGame {
                     break;                                  //process ends. 
                 case "guessed":                             
                     numberOfGuesses = 0;                    
-                    scanner.close();                        
+                    scanner.close();
+                    hasGuessed = true;                        
                     break;
                 default:
                     
@@ -65,7 +70,7 @@ public class ComputerGame {
 
             
         }
-        if (numberOfGuesses == 0) { 
+        if (numberOfGuesses == 0 && !hasGuessed) { 
             System.out.println("I give up");
         }   //Computer's response to running out of guesses
         

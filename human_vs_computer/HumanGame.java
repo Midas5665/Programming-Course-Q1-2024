@@ -7,15 +7,14 @@ import java.util.*; // For Scanner, Random, etc.
  * 99 that you have to guess in at most seven tries. Afterwards, you see your
  * guessing history so you can learn to better play the game.
  * 
- * @author TODO
- * @id     TODO
+ * @author Vasilescu Dan Gabriel
+ * @id     2155699
  * @author TODO
  * @id     TODO
  * @data   TODO
  */
 public class HumanGame {
     Scanner sc = new Scanner(System.in);
-    Random randomGenerator;
 
     void run() {
         // TODO: Implementation
@@ -60,8 +59,8 @@ public class HumanGame {
             }
         }
         sc.close(); 
-        System.out.println((7-numberOfGuesses) + " guess" 
-        + ( 7-numberOfGuesses == 1 ? " :" : "es :"));
+        System.out.println((7 - numberOfGuesses) + " guess" 
+            + (7 - numberOfGuesses == 1 ? " :" : "es :"));
 
         for (int i : guesses) {
             for (int j = 0; j < 99; j++) {
