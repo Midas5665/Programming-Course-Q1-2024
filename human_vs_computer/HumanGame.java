@@ -12,6 +12,11 @@ import java.util.*; // For Scanner, Random, etc.
  * @author TODO
  * @id     TODO
  * @data   TODO
+ * @author Dediu David Gabriel
+ * @ID <2096676>
+ * @author Vasilescu Dan Gabriel
+ * @ID <2155699> 
+ * @data  14/09/2024
  */
 public class HumanGame {
     Scanner sc = new Scanner(System.in);
@@ -41,7 +46,12 @@ public class HumanGame {
         if (userInput > n) {
             System.out.println("lower");
         }
+        if (userInput == n) {
+            System.out.println("Good guess! You won.");
+        }
+
         while (userInput != n && numberOfGuesses > 0 && sc.hasNextInt()) {
+            
             userInput = sc.nextInt();
             numberOfGuesses--;
             guesses.add(userInput);
@@ -61,6 +71,9 @@ public class HumanGame {
         sc.close(); 
         System.out.println((7 - numberOfGuesses) + " guess" 
             + (7 - numberOfGuesses == 1 ? " :" : "es :"));
+
+        System.out.println((7 - numberOfGuesses) 
+        + " guess" + (7 - numberOfGuesses == 1 ? " :" : "es :"));
 
         for (int i : guesses) {
             for (int j = 0; j < 99; j++) {

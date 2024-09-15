@@ -12,10 +12,10 @@ import java.util.Scanner; //Importing the java scanner package for future use
  * 
  * 
  * @author Vasilescu Dan Gabriel
- * @id     2155699
- * @author TODO
- * @id     TODO
- * @data   TODO
+ * @ID <2155699> 
+ * @author Dediu David Gabriel
+ * @ID <2096676>
+ * @data  14/09/2024
  */
 public class ComputerGame {
     Scanner scanner = new Scanner(System.in); //Building a new scanner object
