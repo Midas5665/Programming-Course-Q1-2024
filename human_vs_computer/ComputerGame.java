@@ -33,8 +33,10 @@ public class ComputerGame {
         System.out.println("Think of a secret number between not smaller"
             + "than 0 and not greater than 999. Type 'go' when you have one."); 
         //A small guide for first time users
+
         startWord = scanner.next();
         Boolean hasGuessed = false;
+        
         while (numberOfGuesses != 0 && startWord.equals("go") && !hasGuessed) {
             guessedNumber = (bottomBorder + topBorder) / 2; //The basis of binary search,
             System.out.println(guessedNumber);              //we make our computer 'guess'
@@ -61,7 +63,7 @@ public class ComputerGame {
             }
                   
         }
-        if (numberOfGuesses == 0) { 
+        if (numberOfGuesses == 0 && !hasGuessed) { 
             System.out.println("I give up");
         }   //Computer's response to running out of guesses
         
