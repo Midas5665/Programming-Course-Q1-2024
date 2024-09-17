@@ -1,6 +1,6 @@
 import java.util.Scanner; //Importing the java scanner package for future use
 
-/**
+/*
  * Simple number guessing game for computers.
  * 
  * This program activates with the help of the string variable startWord. If the user
@@ -25,21 +25,19 @@ public class ComputerGame {
         int numberOfGuesses = 10;   //Defining the main variables needed at the start of 
         int bottomBorder = 0;       //the main constructor.
         int topBorder = 1000;
-        int guessedNumber;  //a one time variable to cleanly start the process
-
         String response;    //Response will be used to communicate to the computer
         String startWord;   //the validity of its guess, while startWord serves as
+        int guessedNumber;  //a one time variable to cleanly start the process
+
         
-        boolean hasGuessed = false; 
-        //a one time variable to check for cases in 
-        //which the computer guessed with its final attempt
-        
-        System.out.println("Think of a secret number not smaller "
+        System.out.println("Think of a secret number between not smaller"
             + "than 0 and not greater than 999. Type 'go' when you have one."); 
         //A small guide for first time users
+
         startWord = scanner.next();
+        Boolean hasGuessed = false;
         
-        while (numberOfGuesses != 0 && startWord.equals("go")){
+        while (numberOfGuesses != 0 && startWord.equals("go") && !hasGuessed) {
             guessedNumber = (bottomBorder + topBorder) / 2; //The basis of binary search,
             System.out.println(guessedNumber);              //we make our computer 'guess'
             numberOfGuesses--;                              //the middle number of its allowed 
@@ -57,18 +55,13 @@ public class ComputerGame {
                     bottomBorder = guessedNumber;           //decreases. For 'guessed', the
                     break;                                  //process ends. 
                 case "guessed":                             
-                    numberOfGuesses = 0;                    
-                    scanner.close();
-                    hasGuessed = true;                        
+                    hasGuessed = true;                  
+                    scanner.close();                        
                     break;
                 default:
                     
-                }
-                
-            
-                
-
-            
+            }
+                  
         }
         if (numberOfGuesses == 0 && !hasGuessed) { 
             System.out.println("I give up");
