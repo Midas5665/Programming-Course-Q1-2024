@@ -14,8 +14,17 @@ class UniversalAutomaton {
     Scanner scanner = new Scanner(System.in);
 
     String genToString(boolean[] gen) {
-        // TODO 13: Copy from ABAutomaton.java
-        return "Hello";
+        // TODO 5
+        String resultString = "";
+        for (int i = 1; i < gen.length; i++) {
+            if (gen[i]) {
+                resultString += "*";
+            }
+            else {
+                resultString += " ";
+            }
+        }
+        return resultString;
     }
 
     boolean[] nextGen(boolean[] ruleSequence, boolean[] gen) {
