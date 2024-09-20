@@ -16,7 +16,7 @@ class UniversalAutomaton {
     String genToString(boolean[] gen) {
         // TODO 5
         String resultString = "";
-        for (int i = 1; i < gen.length; i++) {
+        for (int i = 1; i < gen.length - 1; i++) {
             if (gen[i]) {
                 resultString += "*";
             }
