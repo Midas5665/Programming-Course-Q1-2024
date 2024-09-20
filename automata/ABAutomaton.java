@@ -82,7 +82,8 @@ class ABAutomaton {
         if (scanner.next().equals("init_start")) {
             String input = scanner.next();
             while (!input.equals("init_end")) {
-                resultArray[Integer.valueOf(input)] = true;
+                if(Integer.valueOf(input) <= length && Integer.valueOf(input) >= 1)
+                    resultArray[Integer.valueOf(input)] = true;
                 input = scanner.next();
             }
         }
