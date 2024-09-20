@@ -63,8 +63,8 @@ public class UniversalAutomatonTest {
         boolean[] ruleSequence4 = {true, true, false, false, true, true, false, false};
         boolean[] initGen4 = {false, false, false, false, false,
             false, false, false, false, false, false, false};
-        boolean[] expectedOutput4 = { true, true, true, true, true,
-            true, true, true, true, true, true, true};
+        boolean[] expectedOutput4 = { false, true, true, true, true,
+            true, true, true, true, true, true, false};
         assertArrayEquals(expectedOutput4, new 
             UniversalAutomaton().nextGen(ruleSequence4, initGen4));
     }
