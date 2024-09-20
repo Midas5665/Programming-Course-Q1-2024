@@ -37,7 +37,7 @@ class ABAutomaton {
 
             boolean checked = false;
             if (gen[i - 1]) {
-                resultArray[i] = gen[i] && gen[i + 1] ? false : true;
+                resultArray[i] = !(gen[i] && gen[i + 1]);
                 checked = true;
             }
             if (gen[i + 1] && !checked) {
