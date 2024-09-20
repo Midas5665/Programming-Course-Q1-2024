@@ -61,7 +61,7 @@ public class ComputerGame {
                 default:
                     
             }
-                  
+    
         }
         if (numberOfGuesses == 0 && !hasGuessed) { 
             System.out.println("I give up");

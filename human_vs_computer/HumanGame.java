@@ -89,10 +89,10 @@ public class HumanGame {
             }
         }
         sc.close(); 
-        System.out.println((7 - numberOfGuesses) + " guesses");
+        System.out.println((7 - numberOfGuesses) + " guesses:");
 
         for (int i : guesses) {
-            for (int j = 0; j < 99; j++) {
+            for (int j = 0; j <= 99; j++) {
                 if (j == n && i != n) {
                     System.out.print("|");
                 }
