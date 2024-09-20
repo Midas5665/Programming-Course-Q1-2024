@@ -26,7 +26,7 @@ class ABAutomaton {
         }
         return resultString;
     }
-
+    //THIS IS DONE
     boolean[] nextGenA(boolean[] gen) {
         // TODO 7
         boolean[] resultArray = new boolean[gen.length];
