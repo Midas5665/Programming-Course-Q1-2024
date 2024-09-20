@@ -16,8 +16,8 @@ class ABAutomaton {
     String genToString(boolean[] gen) {
         // TODO 5
         String resultString = "";
-        for(int i = 0; i < gen.length; i++) {
-            if(gen[i]) {
+        for (int i = 1; i < gen.length; i++) {
+            if (gen[i]) {
                 resultString += "*";
             }
             else {
@@ -30,14 +30,14 @@ class ABAutomaton {
     boolean[] nextGenA(boolean[] gen) {
         // TODO 7
         boolean[] resultArray = new boolean[gen.length];
-
-        for(int i = 0; i < gen.length; i++) {
+        resultArray[0] = resultArray[resultArray.length - 1] = false;
+        for (int i = 1; i < gen.length - 1; i++) {
             boolean checked = false;
-            if (i - 1 > 0 && gen[i-1] ) {
-                resultArray[i] = gen[i] && gen[i+1] ? false : true;
+            if (i - 1 >= 0 && gen[i - 1]) {
+                resultArray[i] = (i + 1 < gen.length && gen[i] && gen[i+1]) ? false : true;
                 checked = true;
             }
-            if ( i + 1 < gen.length && gen[i+1] && !checked) {
+            if (i + 1 < gen.length && gen[i + 1] && !checked) {
                 resultArray[i] = true;
                 checked = true;
             }
@@ -51,40 +51,45 @@ class ABAutomaton {
 
     boolean[] nextGenB(boolean[] gen) {
         // TODO 9
+
+        //if(((gen[i]||gen[i-1])&&!g[i+1]) || ((!gen[i] || gen[i-1]) && g[i+1])){
+
+        //}
         return new boolean[] { true, false };
     }
 
     boolean[] readInitalGeneration(int length) {
         // TODO 11
-        boolean[] resultArray = new boolean[length];
-
-        for (int i = 0; i < length; i++) {
+        boolean[] resultArray = new boolean[length + 2];
+        resultArray[0] = resultArray[length + 1] = false;
+        for (int i = 1; i <= length; i++) {
             resultArray[i] = false;
         }
         if (scanner.next().equals("init_start")) {
-            System.out.println("Start reading stuff");
-            while (!scanner.hasNextInt()) {
-                resultArray[scanner.nextInt()] = true;
-                if (scanner.next().equals("init_end")) {
-                    System.out.println("WE STOP HERE");
-                    break;
-                }
+            String input = scanner.next();
+            while (!input.equals("init_end")) {
+                resultArray[Integer.valueOf(input)] = true;
+                input = scanner.next();
             }
         }
         return resultArray;
     }
+    void Write(boolean[] vector) {
 
+        for (int i = 0; i < vector.length; i++) {
+            System.out.println(vector[i]);
+        }
+    }
     void run() {
         // Read input to configure the automaton
         String automaton = scanner.next();
         int genLength = scanner.nextInt();
         int numOfGens = scanner.nextInt();
-
         boolean[] initGen = readInitalGeneration(genLength);
 
         // Run the automaton
         boolean[] gen = initGen;
-        
+        //Write(initGen);
         for (int i = 0; i < numOfGens; i++) {
             // Display the current generation
             System.out.println(genToString(gen));
