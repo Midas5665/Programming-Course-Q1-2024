@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * Test UniversalAutomaton.
  * 
- * TODO 3: Fill in your names and student IDs
+ * 
  * 
  * @author Vasilescu Dan Gabriel
  * @ID <2155699> 
@@ -18,7 +18,7 @@ public class UniversalAutomatonTest {
 
     @Test
     public void testGenToString() {
-        // TODO 13:
+        // 
         // 1. Basic test on a smaller array.
         boolean[] genTest1 = {false, true, false, true, false};
         assertEquals("* *", new UniversalAutomaton().genToString(genTest1));
@@ -38,7 +38,7 @@ public class UniversalAutomatonTest {
 
    @Test
     public void testNextGen() {
-        // TODO 15:
+        // 
         // 1. Test what happens when all rule patterns are false 
         //      on an initial generation of only one full cell
         boolean[] ruleSequence1 = {false, false, false, false, false, false, false, false};
