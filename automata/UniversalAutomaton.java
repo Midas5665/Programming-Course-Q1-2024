@@ -16,7 +16,7 @@ class UniversalAutomaton {
     String genToString(boolean[] gen) {
         // TODO 5
         String resultString = "";
-        for (int i = 1; i < gen.length; i++) {
+        for (int i = 1; i < gen.length - 1; i++) {
             if (gen[i]) {
                 resultString += "*";
             }
@@ -26,37 +26,14 @@ class UniversalAutomaton {
         }
         return resultString;
     }
-
+    
     boolean[] nextGen(boolean[] ruleSequence, boolean[] gen) {
         // TODO 14
         boolean[] resultArray = new boolean[gen.length];
         resultArray[0] = resultArray[resultArray.length - 1] = false;
         for (int i = 1; i < gen.length - 1; i++) {
-            resultArray[i] = false;
-            if (ruleSequence[0] && !(gen[i - 1] || gen[i] || gen[i + 1])) { 
-                resultArray[i] = true;
-            }
-            if (ruleSequence[1] && (!gen[i - 1] && !gen[i] && gen[i + 1])) {
-                resultArray[i] = true;
-            }
-            if (ruleSequence[2] && (!gen[i - 1] && gen[i] && !gen[i + 1])) {
-                resultArray[i] = true;
-            }
-            if (ruleSequence[3] && (!gen[i - 1] && gen[i] && gen[i + 1])) {
-                resultArray[i] = true;
-            }
-            if (ruleSequence[4] && (gen[i - 1] && !gen[i] && !gen[i + 1])) {
-                resultArray[i] = true;
-            }
-            if (ruleSequence[5] && (gen[i - 1] && !gen[i] && gen[i + 1])) {
-                resultArray[i] = true;
-            }
-            if (ruleSequence[6] && (gen[i - 1] && gen[i] && !gen[i + 1])) {
-                resultArray[i] = true;
-            }
-            if (ruleSequence[7] && (gen[i - 1] && gen[i] && gen[i + 1])) {
-                resultArray[i] = true;
-            }
+            resultArray[i] = ruleSequence[((gen[i - 1] ? 1 : 0) * 2  + (gen[i] ? 1 : 0)) * 2 
+            + (gen[i + 1] ? 1 : 0)];
         }
         return resultArray;
     }
