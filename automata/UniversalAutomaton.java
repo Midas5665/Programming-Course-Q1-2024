@@ -3,7 +3,14 @@ import java.util.Scanner;
 /**
  * Universal Automaton.
  * 
- * TODO 3: Fill in your names and student IDs
+ * Documentation.
+ * 
+ * If the ABAutomaton would generate strings based on two predefined patterns, 
+ * this universal Automaton allows the user to create their own unique patterns by 
+ * enabling or disabling different combinations of rules, affecting the generation
+ * of new cells. Other than that, the program works in a similar fashion, using the same
+ * methods for reading, understanding, and generating cells.
+ * 
  * 
  * @author Vasilescu Dan Gabriel
  * @ID <2155699> 
@@ -14,7 +21,7 @@ class UniversalAutomaton {
     Scanner scanner = new Scanner(System.in);
 
     String genToString(boolean[] gen) {
-        // TODO 5
+        // This method converts full and empty cells into a printable string
         String resultString = "";
         for (int i = 1; i < gen.length - 1; i++) {
             if (gen[i]) {
@@ -28,7 +35,9 @@ class UniversalAutomaton {
     }
     
     boolean[] nextGen(boolean[] ruleSequence, boolean[] gen) {
-        // TODO 14
+        //This method creates a new boolean array based on the last one
+        //respecting the user-enabled rules. The borders are made false
+        //to account for cells at the edge of the array.
         boolean[] resultArray = new boolean[gen.length];
         resultArray[0] = resultArray[resultArray.length - 1] = false;
         for (int i = 1; i < gen.length - 1; i++) {
@@ -39,7 +48,8 @@ class UniversalAutomaton {
     }
 
     boolean[] readInitalGeneration(int length) {
-        // TODO 11
+        // This method creates the first boolean array
+        //on which the rules will apply
         boolean[] resultArray = new boolean[length + 2];
         resultArray[0] = resultArray[length + 1] = false;
         for (int i = 1; i <= length; i++) {
@@ -56,7 +66,9 @@ class UniversalAutomaton {
     }
 
     boolean[] readRuleSequence() {
-        // TODO 17
+        // This method converts user input into
+        //True-False values for the generation
+        //rules
         boolean[] ruleArray = new boolean[8];
         for (int i = 0; i < 8; i++) {
             int arrayInput = scanner.nextInt();

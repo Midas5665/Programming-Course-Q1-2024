@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * Test ABAutomaton.
  * 
- * TODO 3: FIll in your names and student IDs
+ * 
  * @author Vasilescu Dan Gabriel
  * @ID <2155699> 
  * @author Dediu David Gabriel
@@ -17,7 +17,7 @@ public class ABAutomatonTest {
 
     @Test
     public void testGenToString() {
-        // TODO 6: 
+        //
 
         // 1. Basic test on a smaller array.
         boolean[] genTest1 = {false, true, false, true, false};
@@ -39,7 +39,7 @@ public class ABAutomatonTest {
 
     @Test
     public void testNextGenA() {
-        // TODO 8: 
+        //  
         
         // 1. Test what happens if only the middle cell is true.
         boolean[] genTest1 = {false, true, false};
@@ -79,7 +79,7 @@ public class ABAutomatonTest {
 
     @Test
     public void testNextGenB() {
-        // TODO 10: 
+        // 
         // 1. Test what happens if only the middle cell is true.
         boolean[] genTest1 = {false, true, false};
         boolean[] expectedOutput1 = {false, true, false};

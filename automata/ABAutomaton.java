@@ -32,7 +32,6 @@ class ABAutomaton {
     Scanner scanner = new Scanner(System.in);
 
     String genToString(boolean[] gen) {
-        // TODO 5
         String resultString = "";
         for (int i = 1; i < gen.length - 1; i++) {
             if (gen[i]) {
@@ -44,9 +43,7 @@ class ABAutomaton {
         }
         return resultString;
     }
-    //THIS IS DONE
     boolean[] nextGenA(boolean[] gen) {
-        // TODO 7
         boolean[] resultArray = new boolean[gen.length];
 
         resultArray[0] = resultArray[resultArray.length - 1] = false;
@@ -72,7 +69,6 @@ class ABAutomaton {
     }
 
     boolean[] nextGenB(boolean[] gen){
-        // TODO 9
         boolean[] resultArray = new boolean[gen.length];
 
         resultArray[0] = resultArray[resultArray.length - 1] = false;
@@ -91,7 +87,6 @@ class ABAutomaton {
 
 
     boolean[] readInitalGeneration(int length) {
-        // TODO 11
         boolean[] resultArray = new boolean[length + 2];
         resultArray[0] = resultArray[length + 1] = false;
         for (int i = 1; i <= length; i++) {
