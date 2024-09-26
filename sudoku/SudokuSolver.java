@@ -15,5 +15,9 @@ public class SudokuSolver {
 
     public static void main(String[] args) {
         // Create a SudokuGrid and a SudokuSolver
+        SudokuGrid grid = new SudokuGrid();
+        SudokuSolver solver = new SudokuSolver(grid);
+
+        grid.print();
     }
 }
