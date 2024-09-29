@@ -1,5 +1,6 @@
 import java.awt.Point;
 
+
 public class SudokuGrid {
     private static final int SIZE = 9;
     private static final int DIGIT_RANGE = 9;
@@ -16,7 +17,18 @@ public class SudokuGrid {
 
     public SudokuGrid copy() {
         // Create a copy of the SudokuGrid and return it
+        SudokuGrid sudokuGrid = new SudokuGrid();
+        sudokuGrid.rEmpty = rEmpty;
+        sudokuGrid.cEmpty = cEmpty;
+        sudokuGrid.grid = new int[SIZE][SIZE];
 
+        for (int i = 0 ; i < SIZE; i++) {
+            for (int j = 0 ; j < SIZE; j++) {
+                sudokuGrid.grid[i][j] = grid[i][j];
+            }
+        }
+        return sudokuGrid;
+        
     }
 
     public Point findEmptyCell() {
@@ -85,6 +97,14 @@ public class SudokuGrid {
     private boolean boxConflict(int r, int c, int d) {
         // Check if there is a conflict in the 3x3 box containing the cell at row r and column c
         // when filling the number d
+        for (int i = (0 + (r / 3) * 3); i < (3 + (r / 3) * 3); i++) {
+            for (int j = (0 + (c / 3) * 3); j < (3 + (c / 3) * 3); j++) {
+                if (grid[i][j] == d) {
+                    return true;
+                }
+            }
+        }
+        
         return false;
     }
 }
