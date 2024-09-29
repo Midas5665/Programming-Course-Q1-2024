@@ -1,10 +1,18 @@
 import java.awt.Point;
-
-/**
+/** 
+ * 
  * The main class for the sudoku solver, containing the methods to find
  * the solution to any sudoku grid if it has any. If it doesn't,
  * the message "No solution" will be printed.
+ * 
+ * 
+ * @author Vasilescu Dan Gabriel
+ * @ID <2155699> 
+ * @author Dediu David Gabriel
+ * @ID <2096676>
+ * 
  */
+
 public class SudokuSolver {
     SudokuGrid grid;
 
@@ -61,7 +69,6 @@ public class SudokuSolver {
         } else {
             System.out.println("No solution");
         }
-        
     }
 
     public static void main(String[] args) {

@@ -5,11 +5,17 @@ import java.awt.Point;
  * a grid and the coordinates of the last found empty cell initialized at -1.
  * It also contains the methods for printing, filling cells, and checking for 
  * any conflicts in the grid.
+ * 
+ * @author Vasilescu Dan Gabriel
+ * @ID <2155699> 
+ * @author Dediu David Gabriel
+ * @ID <2096676>
+ * 
  */
 public class SudokuGrid {
     private static final int SIZE = 9;
     //private static final int DIGIT_RANGE = 9;
-    
+
     //Variable declaration commented out because it
     //has no usable function due to its private, static
     //and final modifiers. The only place it could work
