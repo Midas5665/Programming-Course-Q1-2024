@@ -1,13 +1,29 @@
 import java.awt.Point;
+
+/**
+ * The main class for the sudoku solver, containing the methods to find
+ * the solution to any sudoku grid if it has any. If it doesn't,
+ * the message "No solution" will be printed.
+ */
 public class SudokuSolver {
     SudokuGrid grid;
-    SudokuGrid lastSolution = null;
-    SudokuGrid firstSolution = null;
-    static int numberOfSolutions;
+
+    /**
+     * Initialize the SudokuSolver with the provided SudokuGrid.
+     * 
+     * @param grid of the sudoku puzzle
+     */
     public SudokuSolver(SudokuGrid grid) {
-        // Initialize the SudokuSolver with the provided SudokuGrid
         this.grid = grid;
     }
+
+    /**
+     * Using recursion and backtracking, solve() is supposed to brute force its
+     * way through every possible option for the empty cells in the grid until it finds
+     * a valid solution.
+     * 
+     * @return whether the grid in its current state is solvable and conflict-free
+     */
     
     public boolean solve() {
         // Use a recursive strategy to solve the Sudoku puzzle
@@ -26,8 +42,7 @@ public class SudokuSolver {
                 boolean isSolution = solve();
                 if (isSolution) {
                     return true;
-                }
-                else {
+                } else {
                     grid = oldGrid;
                 }
             }
@@ -40,11 +55,12 @@ public class SudokuSolver {
      */
     
     public void solveIt() {
-        //
-        boolean rez = solve();
-        firstSolution.print();
-        lastSolution.print();
-        System.out.println(rez);
+        if (solve()) {
+            grid.print();
+        } else {
+            System.out.println("No solution");
+        }
+        
     }
 
     public static void main(String[] args) {
